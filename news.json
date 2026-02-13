@@ -12,11 +12,16 @@
   {
     "category": "national",
     "title": "Neue Arbeitslosenzahlen",
-    "description": "Aktuelle Daten zeigen leichte Entspannung."
+    "description": "Registrierte Arbeitslosenquote Schweiz: 3,2 %, Kanton Zürich: ca. 2,7–2,9 %."
   },
   {
     "category": "branchen",
     "title": "IT & Pflege weiter gesucht",
     "description": "Fachkräftemangel bleibt hoch. Bewerbungstipps für RAV-Berater verfügbar."
+  },
+  {
+    "category": "trends",
+    "title": "Vermittlung & Beratung – Tipps",
+    "description": "Schnell an eine neue Stelle: Netzwerken, aktive Initiativbewerbungen, LinkedIn-Profile optimieren, RAV-Beratung nutzen."
   }
 ]
