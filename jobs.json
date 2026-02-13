@@ -1,0 +1,7 @@
+[
+  { "category":"banking", "title":"Senior Banker", "description":"Meilen, 100% | Exklusiv für Finanzexperten" },
+  { "category":"ict", "title":"Fullstack Developer", "description":"Meilen, 80% | Erfahrung Node.js" },
+  { "category":"marketing", "title":"Marketing Manager", "description":"Meilen, 100% | Digital Campaigns" },
+  { "category":"gastronomie", "title":"Restaurantleiter", "description":"Meilen, 100% | Hochqualifiziert" },
+  { "category":"fuehrung", "title":"Teamleiter Vertrieb", "description":"Meilen, 100% | Führungserfahrung" }
+]
