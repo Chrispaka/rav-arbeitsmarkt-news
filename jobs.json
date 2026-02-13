@@ -1,50 +1,42 @@
 [
   {
-    "category": "verkauf_kv",
-    "title": "Kaufmännische/r Mitarbeiter/in – Sales & Support",
-    "location": "Pfäffikon SZ (bei Meilen)",
-    "posted": "2026-02-06",
-    "description": "Kaufmännische/r Mitarbeiter/in – Sales & Support (w/m/d) 60‑80%, Festanstellung.",
-    "link": "https://ch.indeed.com/viewjob?jk=example1"
+    "category": "gesundheit_pflege",
+    "title": "Nursing Assistant SRK (20–60%)",
+    "location": "Meilen ZH",
+    "posted": "2026-01-24",
+    "description": "Pflegeassistenz / Nursing Assistant bei Spitex 24 AG in Meilen.",
+    "link": "https://www.jobup.ch/en/jobs/detail/8e080fa3-b6b9-449c-b677-6fb5ff6c9a07/"
   },
   {
-    "category": "service",
-    "title": "Gruppenleiter:in Service / Stv. Leiterin Gastronomie",
-    "location": "Meilen",
-    "posted": "2026-02-05",
-    "description": "Gruppenleiter:in Service / Stv. Leiterin Gastronomie bei Alters‑ & Pflegeheim Meilen.",
-    "link": "https://www.jobscout24.ch/job/12345"
+    "category": "pflege",
+    "title": "Dipl. Pflegefachperson HF Somatik (60–100%)",
+    "location": "Meilen ZH",
+    "posted": "2026-02-02",
+    "description": "Offene Stelle als Pflegefachperson HF mit Schwerpunkt Somatik.",
+    "link": "https://www.jobscout24.ch/de/jobs/meilen/dipl-pflegefachperson-hf-somatik-60-100-a3562741"
+  },
+  {
+    "category": "verkauf",
+    "title": "Verkaufsberater:in Betten & Schlafsysteme (100%)",
+    "location": "Meilen ZH",
+    "posted": "2026-02-01",
+    "description": "Verkaufsberater:in im Retailbereich Betten & Schlafsysteme.",
+    "link": "https://www.jobscout24.ch/de/jobs/meilen/verkaufsberater-in-betten-schlafsysteme-100-a3562750"
   },
   {
     "category": "technik",
-    "title": "Automobil Mechatroniker/-in oder Diagnostiker/-in",
-    "location": "Zürich",
-    "posted": "2026-02-04",
-    "description": "Automobil Mechatroniker/-in oder Diagnostiker/-in bei AMAG Group.",
-    "link": "https://www.jobscout24.ch/job/67890"
-  },
-  {
-    "category": "gesundheit",
-    "title": "Pflegefachperson HF/FH",
-    "location": "Richterswil (Region)",
+    "title": "Servicetechniker (Quereinsteiger willkommen)",
+    "location": "Meilen ZH",
     "posted": "2026-02-03",
-    "description": "Pflegefachperson HF/FH 40‑100% bei ORS Service AG.",
-    "link": "https://www.jobscout24.ch/job/23456"
+    "description": "Servicetechniker in technischen Einsatzbereichen mit Ausbildung willkommen.",
+    "link": "https://www.jobscout24.ch/de/jobs/meilen/servicetechniker-quereinsteiger-100-a3562739"
   },
   {
-    "category": "ict",
-    "title": "System Engineer",
-    "location": "Uster (Region)",
-    "posted": "2026-02-02",
-    "description": "System Engineer 80‑100% mit Aufstiegsmöglichkeiten.",
-    "link": "https://www.jobscout24.ch/job/34567"
-  },
-  {
-    "category": "finance",
-    "title": "Kundenberater:in Privatkunden – Zürcher Kantonalbank",
-    "location": "Meilen",
-    "posted": "2026-02-01",
-    "description": "Kundenberater:in Privatkunden für Zürcher Kantonalbank.",
-    "link": "https://www.myjob.ch/job/kundenberaterin-privatkunden/2475451"
+    "category": "verwaltung",
+    "title": "Sachbearbeiterin Empfang & Patientenaufnahme",
+    "location": "Meilen ZH",
+    "posted": "2026-02-05",
+    "description": "Sachbearbeitung im Empfang & Patientenaufnahmebereich.",
+    "link": "https://www.workpool-jobs.ch/sachbearbeiterin-empfang-patientenaufnahme-meilen"
   }
 ]
