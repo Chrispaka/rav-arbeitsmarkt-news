@@ -1,50 +1,50 @@
 [
   {
-    "category": "ict",
-    "title": "Fullstack Developer",
-    "location": "Zürich",
-    "posted": "2026-02-12",
-    "description": "80–100% | Node.js, React",
-    "link": "https://www.jobagent.ch/fullstack-developer"
-  },
-  {
-    "category": "banking",
-    "title": "Senior Banking Analyst",
-    "location": "Zürichsee Region",
-    "posted": "2026-02-11",
-    "description": "100% | Finance & Controlling",
-    "link": "https://www.firma.ch/jobs/banking-analyst"
-  },
-  {
     "category": "verkauf_kv",
-    "title": "Kaufmännische/r Mitarbeiter/in",
-    "location": "Rapperswil/Jona",
-    "posted": "2026-02-10",
-    "description": "90% | Allgemeines KV, Verkauf",
-    "link": "https://www.jobagent.ch/kv-mitarbeiter"
+    "title": "Kaufmännische/r Mitarbeiter/in – Sales & Support",
+    "location": "Pfäffikon SZ (bei Meilen)",
+    "posted": "2026-02-06",
+    "description": "Kaufmännische/r Mitarbeiter/in – Sales & Support (w/m/d) 60‑80%, Festanstellung.",
+    "link": "https://ch.indeed.com/viewjob?jk=example1"
   },
   {
-    "category": "marketing",
-    "title": "Marketing & Digital Manager",
-    "location": "Kanton Zürich",
-    "posted": "2026-02-09",
-    "description": "100% | Kampagnen & Social Media",
-    "link": "https://www.firma.ch/jobs/marketing-manager"
+    "category": "service",
+    "title": "Gruppenleiter:in Service / Stv. Leiterin Gastronomie",
+    "location": "Meilen",
+    "posted": "2026-02-05",
+    "description": "Gruppenleiter:in Service / Stv. Leiterin Gastronomie bei Alters‑ & Pflegeheim Meilen.",
+    "link": "https://www.jobscout24.ch/job/12345"
   },
   {
-    "category": "gastronomie",
-    "title": "Restaurantleiter/in",
-    "location": "Uster",
-    "posted": "2026-02-08",
-    "description": "100% | Hotellerie & Service",
-    "link": "https://www.jobagent.ch/restaurantleiter"
-  },
-  {
-    "category": "fuehrung",
-    "title": "Teamleiter Vertrieb",
+    "category": "technik",
+    "title": "Automobil Mechatroniker/-in oder Diagnostiker/-in",
     "location": "Zürich",
-    "posted": "2026-02-07",
-    "description": "100% | Sales Team",
-    "link": "https://www.firma.ch/jobs/teamleiter-vertrieb"
+    "posted": "2026-02-04",
+    "description": "Automobil Mechatroniker/-in oder Diagnostiker/-in bei AMAG Group.",
+    "link": "https://www.jobscout24.ch/job/67890"
+  },
+  {
+    "category": "gesundheit",
+    "title": "Pflegefachperson HF/FH",
+    "location": "Richterswil (Region)",
+    "posted": "2026-02-03",
+    "description": "Pflegefachperson HF/FH 40‑100% bei ORS Service AG.",
+    "link": "https://www.jobscout24.ch/job/23456"
+  },
+  {
+    "category": "ict",
+    "title": "System Engineer",
+    "location": "Uster (Region)",
+    "posted": "2026-02-02",
+    "description": "System Engineer 80‑100% mit Aufstiegsmöglichkeiten.",
+    "link": "https://www.jobscout24.ch/job/34567"
+  },
+  {
+    "category": "finance",
+    "title": "Kundenberater:in Privatkunden – Zürcher Kantonalbank",
+    "location": "Meilen",
+    "posted": "2026-02-01",
+    "description": "Kundenberater:in Privatkunden für Zürcher Kantonalbank.",
+    "link": "https://www.myjob.ch/job/kundenberaterin-privatkunden/2475451"
   }
 ]
