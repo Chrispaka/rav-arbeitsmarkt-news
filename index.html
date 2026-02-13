@@ -2,8 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Arbeitsmarkt News – RAV Meilen</title>
-<link rel="stylesheet" href="style.css"> <!-- optional -->
+<title>Arbeitsmarkt News & Stellen Meilen – RAV</title>
 <style>
 body { font-family: Arial; margin:0; background:#f5f5f5; }
 header { background:#A8D5BA; padding:20px; text-align:center; font-size:24px; }
@@ -15,8 +14,9 @@ header { background:#A8D5BA; padding:20px; text-align:center; font-size:24px; }
 .regional { background:#FBC4AB; }
 .national { background:#FFE9A8; }
 .branchen { background:#C3C9E4; }
-.jobs .banking { background:#C3E4C3; }
 .jobs .ict { background:#C3D6E4; }
+.jobs .banking { background:#C3E4C3; }
+.jobs .verkauf_kv { background:#E4E0C3; }
 .jobs .marketing { background:#E4C3D6; }
 .jobs .gastronomie { background:#FDE0C3; }
 .jobs .fuehrung { background:#E4E0C3; }
@@ -29,6 +29,7 @@ header { background:#A8D5BA; padding:20px; text-align:center; font-size:24px; }
 
 <header>Arbeitsmarkt News & Stellen Meilen – RAV</header>
 
+<!-- Filter News -->
 <div class="filters">
   <button onclick="filterNews('all')">Alle News</button>
   <button onclick="filterNews('allgemein')">Allgemein</button>
@@ -37,18 +38,22 @@ header { background:#A8D5BA; padding:20px; text-align:center; font-size:24px; }
   <button onclick="filterNews('branchen')">Arbeitsmarkt</button>
 </div>
 
+<!-- Arbeitslosenquote -->
 <div class="stats" id="stats"></div>
 
+<!-- News -->
 <div class="news" id="news"></div>
 
-<h2 style="text-align:center; margin-top:20px;">Aktuelle Stellen Meilen</h2>
+<!-- Stellenangebote -->
+<h2 style="text-align:center; margin-top:20px;">Aktuelle Stellen Meilen & Umgebung</h2>
 <div class="filters">
   <button onclick="filterJobs('all')">Alle</button>
+  <button onclick="filterJobs('ict')">ICT & Software</button>
   <button onclick="filterJobs('banking')">Banking & Finance</button>
-  <button onclick="filterJobs('ict')">ICT</button>
-  <button onclick="filterJobs('marketing')">Marketing</button>
-  <button onclick="filterJobs('gastronomie')">Gastronomie</button>
-  <button onclick="filterJobs('fuehrung')">Führungsstellen</button>
+  <button onclick="filterJobs('verkauf_kv')">Verkauf & KV</button>
+  <button onclick="filterJobs('marketing')">Marketing & Kommunikation</button>
+  <button onclick="filterJobs('gastronomie')">Gastronomie & Hotellerie</button>
+  <button onclick="filterJobs('fuehrung')">Führungsstellen / Management</button>
 </div>
 <div class="jobs" id="jobs"></div>
 
@@ -85,7 +90,11 @@ function loadJobs(){
       data.forEach(i=>{
         const d = document.createElement("div");
         d.className = `card ${i.category}`;
-        d.innerHTML = `<b>${i.title}</b><br>${i.description}`;
+        d.innerHTML = `
+          <b>${i.title}</b><br>
+          <small>${i.location} | Aufgeschaltet: ${i.posted}</small><br>
+          ${i.description}
+        `;
         j.appendChild(d);
       });
     });
@@ -103,10 +112,10 @@ function loadStats(){
   stats.innerHTML = '';
   const schweiz = document.createElement("div");
   schweiz.className = 'stat-card';
-  schweiz.innerHTML = `<b>Schweiz</b><br>Arbeitslosigkeit: 2.3%`;
+  schweiz.innerHTML = `<b>Schweiz</b><br>Arbeitslosenquote: 2.8%`;
   const zurich = document.createElement("div");
   zurich.className = 'stat-card';
-  zurich.innerHTML = `<b>Kanton Zürich</b><br>Arbeitslosigkeit: 2.0%`;
+  zurich.innerHTML = `<b>Kanton Zürich</b><br>Arbeitslosenquote: 2.5%`;
   stats.append(schweiz, zurich);
 }
 
