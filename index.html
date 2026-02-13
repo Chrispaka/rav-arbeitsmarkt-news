@@ -112,14 +112,25 @@ function filterJobs(cat){
 function loadStats(){
   const stats = document.getElementById("stats");
   stats.innerHTML = '';
+
   const schweiz = document.createElement("div");
   schweiz.className = 'stat-card';
-  schweiz.innerHTML = `<b>Schweiz</b><br>Arbeitslosenquote: 3,2 % (SECO, aktuell)`;
+  schweiz.innerHTML = `
+    <b>Schweiz</b><br>
+    Arbeitslosenquote: 3,2 %<br>
+    Stellensuchendenquote: 4,9 % (aktuell SECO)
+  `;
+
   const zurich = document.createElement("div");
   zurich.className = 'stat-card';
-  zurich.innerHTML = `<b>Kanton Zürich</b><br>Arbeitslosenquote: ca. 2,8 % (aktuell, Stadt Zürich)`;
+  zurich.innerHTML = `
+    <b>Kanton Zürich</b><br>
+    Arbeitslosenquote: 2,9 %
+  `;
+
   stats.append(schweiz, zurich);
 }
+
 
 // ------------------ Auto-Update ------------------
 function autoUpdate(){
