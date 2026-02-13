@@ -1,7 +1,44 @@
 [
-  { "category":"banking", "title":"Senior Banker", "description":"Meilen, 100% | Exklusiv für Finanzexperten" },
-  { "category":"ict", "title":"Fullstack Developer", "description":"Meilen, 80% | Erfahrung Node.js" },
-  { "category":"marketing", "title":"Marketing Manager", "description":"Meilen, 100% | Digital Campaigns" },
-  { "category":"gastronomie", "title":"Restaurantleiter", "description":"Meilen, 100% | Hochqualifiziert" },
-  { "category":"fuehrung", "title":"Teamleiter Vertrieb", "description":"Meilen, 100% | Führungserfahrung" }
+  {
+    "category": "ict",
+    "title": "Fullstack Developer",
+    "location": "Zürich",
+    "posted": "2026-02-10",
+    "description": "80–100% | Node.js, React"
+  },
+  {
+    "category": "banking",
+    "title": "Senior Banking Analyst",
+    "location": "Zürichsee Region",
+    "posted": "2026-02-12",
+    "description": "100% | Finance & Controlling"
+  },
+  {
+    "category": "verkauf_kv",
+    "title": "Kaufmännische/r Mitarbeiter/in",
+    "location": "Rapperswil/Jona",
+    "posted": "2026-02-11",
+    "description": "90% | Allgemeines KV"
+  },
+  {
+    "category": "marketing",
+    "title": "Marketing & Digital Manager",
+    "location": "Kanton Zürich",
+    "posted": "2026-02-09",
+    "description": "100% | Kampagnen & Social Media"
+  },
+  {
+    "category": "gastronomie",
+    "title": "Restaurantleiter/in",
+    "location": "Uster",
+    "posted": "2026-02-08",
+    "description": "100% | Hotellerie & Service"
+  },
+  {
+    "category": "fuehrung",
+    "title": "Teamleiter Vertrieb",
+    "location": "Zürich",
+    "posted": "2026-02-10",
+    "description": "100% | Sales Team"
+  }
 ]
