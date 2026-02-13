@@ -9,7 +9,8 @@ header { background:#A8D5BA; padding:20px; text-align:center; font-size:24px; }
 .filters { text-align:center; margin:15px; }
 .filters button { padding:8px 14px; margin:5px; border:none; border-radius:6px; cursor:pointer; }
 .news, .jobs { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:15px; padding:20px; }
-.card { padding:15px; border-radius:10px; background:white; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+.card { padding:15px; border-radius:10px; background:white; box-shadow:0 2px 6px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.2s;}
+.card:hover { transform:scale(1.02); }
 .allgemein { background:#A8D5BA; }
 .regional { background:#FBC4AB; }
 .national { background:#FFE9A8; }
@@ -87,13 +88,12 @@ function loadJobs(){
   fetch('jobs.json')
     .then(r => r.json())
     .then(data => {
-      // nach Datum sortieren: neueste zuerst
+      // sortieren: neueste zuerst
       data.sort((a, b) => new Date(b.posted) - new Date(a.posted));
 
       const j = document.getElementById("jobs");
       j.innerHTML = '';
 
-      // max 50 Jobs anzeigen
       const maxDisplay = 50;
       const jobsToShow = data.slice(0, maxDisplay);
 
@@ -105,6 +105,8 @@ function loadJobs(){
           <small>${i.location} | Aufgeschaltet: ${i.posted}</small><br>
           ${i.description}
         `;
+        // Bei Klick: Link öffnen
+        d.onclick = () => { window.open(i.link, '_blank'); };
         j.appendChild(d);
       });
     });
