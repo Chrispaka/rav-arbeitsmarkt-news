@@ -2,114 +2,87 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Arbeitsmarkt News & Stellen Meilen – RAV</title>
+<title>Arbeitsmarkt & Jobs Meilen – RAV</title>
 <style>
-body { font-family: Arial; margin:0; background:#f5f5f5; }
+body { font-family: Arial; background:#f5f5f5; margin:0; }
 header { background:#A8D5BA; padding:20px; text-align:center; font-size:24px; }
 .filters { text-align:center; margin:15px; }
 .filters button { padding:8px 14px; margin:5px; border:none; border-radius:6px; cursor:pointer; }
 .news, .jobs { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:15px; padding:20px; }
-.card { padding:15px; border-radius:10px; background:white; box-shadow:0 2px 6px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.2s;}
+.card { background:white; padding:15px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:0.2s; }
 .card:hover { transform:scale(1.02); }
-.allgemein { background:#A8D5BA; }
-.regional { background:#FBC4AB; }
-.national { background:#FFE9A8; }
-.branchen { background:#C3C9E4; }
-.trends { background:#D6E4C3; }
-.jobs .ict { background:#C3D6E4; }
-.jobs .banking { background:#C3E4C3; }
-.jobs .verkauf_kv { background:#E4E0C3; }
-.jobs .marketing { background:#E4C3D6; }
-.jobs .gastronomie { background:#FDE0C3; }
-.jobs .fuehrung { background:#E4E0C3; }
-.jobs .finance { background:#D6C3E4; }
-.hidden { display:none; }
-.stats { display:flex; justify-content:center; gap:20px; margin:15px; }
-.stat-card { background:white; padding:15px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center; width:180px; }
+.stat-card { background:white; padding:15px; border-radius:10px; margin:0 10px; text-align:center; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
 </style>
 </head>
 <body>
 
-<header>Arbeitsmarkt News & Stellen Meilen – RAV</header>
+<header>Arbeitsmarkt News & Jobs – RAV Meilen</header>
 
-<!-- Filter News -->
 <div class="filters">
   <button onclick="filterNews('all')">Alle News</button>
   <button onclick="filterNews('allgemein')">Allgemein</button>
-  <button onclick="filterNews('regional')">Regional Zürich</button>
-  <button onclick="filterNews('national')">National</button>
-  <button onclick="filterNews('branchen')">Arbeitsmarkt</button>
-  <button onclick="filterNews('trends')">Trends & Tipps</button>
+  <button onclick="filterNews('branchen')">Branchen</button>
+  <button onclick="filterNews('trends')">Tipps & Trends</button>
 </div>
 
-<!-- Arbeitslosenquote -->
-<div class="stats" id="stats"></div>
+<div id="stats" class="stats"></div>
+<div id="news" class="news"></div>
 
-<!-- News -->
-<div class="news" id="news"></div>
-
-<!-- Stellenangebote -->
-<h2 style="text-align:center; margin-top:20px;">Aktuelle Stellen Meilen & Umgebung</h2>
+<h2 style="text-align:center; margin-top:20px;">Aktuelle Jobs Meilen & Umgebung</h2>
 <div class="filters">
   <button onclick="filterJobs('all')">Alle</button>
-  <button onclick="filterJobs('ict')">ICT & Software</button>
-  <button onclick="filterJobs('banking')">Banking & Finance</button>
-  <button onclick="filterJobs('verkauf_kv')">Verkauf & KV</button>
-  <button onclick="filterJobs('marketing')">Marketing & Kommunikation</button>
-  <button onclick="filterJobs('gastronomie')">Gastronomie & Hotellerie</button>
-  <button onclick="filterJobs('fuehrung')">Führungsstellen / Management</button>
-  <button onclick="filterJobs('finance')">Finance</button>
+  <button onclick="filterJobs('pflege')">Pflege</button>
+  <button onclick="filterJobs('sachbearbeitung')">Sachbearbeitung</button>
+  <button onclick="filterJobs('ict')">ICT</button>
 </div>
-<div class="jobs" id="jobs"></div>
+<div id="jobs" class="jobs"></div>
 
 <script>
-// ------------------ News laden ------------------
+// News laden
 function loadNews(){
   fetch('news.json')
-    .then(r => r.json())
-    .then(data => {
-      const n = document.getElementById("news");
-      n.innerHTML = '';
+    .then(r=>r.json())
+    .then(data=>{
+      const n=document.getElementById("news");
+      n.innerHTML='';
       data.forEach(i=>{
-        const d = document.createElement("div");
-        d.className = `card ${i.category}`;
-        d.innerHTML = `<b>${i.title}</b><br>${i.description}`;
+        const d=document.createElement("div");
+        d.className='card '+i.category;
+        d.innerHTML=`<b>${i.title}</b><br>${i.description}`;
         n.appendChild(d);
       });
     });
 }
 
 function filterNews(cat){
-  document.querySelectorAll(".news .card").forEach(c=>{
-    c.classList.toggle("hidden", cat!=="all" && !c.classList.contains(cat));
+  document.querySelectorAll("#news .card").forEach(c=>{
+    c.style.display = (cat==='all' || c.classList.contains(cat)) ? '' : 'none';
   });
 }
 
-// ------------------ Jobs laden ------------------
+// Jobs laden
 function loadJobs(){
   fetch('jobs.json')
-    .then(r => r.json())
-    .then(data => {
-      data.sort((a, b) => new Date(b.posted) - new Date(a.posted));
-      const j = document.getElementById("jobs");
-      j.innerHTML = '';
-      const maxDisplay = 50;
-      const jobsToShow = data.slice(0, maxDisplay);
-      jobsToShow.forEach(i => {
-        const d = document.createElement("div");
-        d.className = `card ${i.category}`;
-        d.innerHTML = `
+    .then(r=>r.json())
+    .then(data=>{
+      data.sort((a,b)=>new Date(b.posted)-new Date(a.posted));
+      const j=document.getElementById("jobs");
+      j.innerHTML='';
+      data.forEach(i=>{
+        const d=document.createElement("div");
+        d.className='card '+i.category;
+        d.innerHTML=`
           <b>${i.title}</b><br>
           <small>${i.location} | Aufgeschaltet: ${i.posted}</small><br>
           ${i.description}
         `;
         if(i.link){
-          const linkEl = document.createElement("a");
-          linkEl.href = i.link;
-          linkEl.target = "_blank";
-          linkEl.textContent = "Zum Inserat";
-          linkEl.style = "display:block; margin-top:8px; color:#0056b3; font-weight:bold;";
-          d.appendChild(linkEl);
+          const a=document.createElement("a");
+          a.href=i.link;
+          a.target="_blank";
+          a.textContent="Zum Inserat";
+          a.style="display:block;margin-top:8px;color:#0056b3;font-weight:bold;";
+          d.appendChild(a);
         }
         j.appendChild(d);
       });
@@ -117,47 +90,27 @@ function loadJobs(){
 }
 
 function filterJobs(cat){
-  document.querySelectorAll(".jobs .card").forEach(c=>{
-    c.classList.toggle("hidden", cat!=="all" && !c.classList.contains(cat));
+  document.querySelectorAll("#jobs .card").forEach(c=>{
+    c.style.display = (cat==='all' || c.classList.contains(cat)) ? '' : 'none';
   });
 }
 
-// ------------------ Arbeitslosenzahlen ------------------
+// Arbeitslosenzahlen (aktuell manuell)
 function loadStats(){
-  const stats = document.getElementById("stats");
-  stats.innerHTML = '';
-
-  const schweiz = document.createElement("div");
-  schweiz.className = 'stat-card';
-  schweiz.innerHTML = `
-    <b>Schweiz</b><br>
-    Arbeitslosenquote: 3,2 %<br>
-    Stellensuchendenquote: 4,9 % (aktuell SECO)
-  `;
-
-  const zurich = document.createElement("div");
-  zurich.className = 'stat-card';
-  zurich.innerHTML = `
-    <b>Kanton Zürich</b><br>
-    Arbeitslosenquote: 2,9 %
-  `;
-
-  stats.append(schweiz, zurich);
+  const stats=document.getElementById("stats");
+  stats.innerHTML='';
+  const s1=document.createElement("div");
+  s1.className='stat-card';
+  s1.innerHTML="<b>Schweiz</b><br>Arbeitslosenquote: 3,2 % (SECO aktuell)";
+  const s2=document.createElement("div");
+  s2.className='stat-card';
+  s2.innerHTML="<b>Kanton Zürich</b><br>Arbeitslosenquote: ca. 2,9 %";
+  stats.append(s1,s2);
 }
 
-// ------------------ Auto-Update ------------------
-function autoUpdate(){
-  const now = new Date();
-  const h = now.getHours();
-  if(h >= 6 && h <= 19){
-    loadNews();
-    loadJobs();
-    loadStats();
-  }
-}
-
-autoUpdate();
-setInterval(autoUpdate, 4*60*60*1000);
+loadStats();
+loadNews();
+loadJobs();
 </script>
 
 </body>
