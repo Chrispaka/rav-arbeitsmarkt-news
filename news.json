@@ -1,0 +1,22 @@
+[
+  {
+    "category": "allgemein",
+    "title": "Arbeitsmarkt stabil",
+    "description": "Die Nachfrage nach Fachkräften bleibt konstant."
+  },
+  {
+    "category": "regional",
+    "title": "Zürich meldet neue Vakanzen",
+    "description": "Im Grossraum Zürich steigt die Zahl offener Stellen."
+  },
+  {
+    "category": "national",
+    "title": "Neue Arbeitslosenzahlen",
+    "description": "Aktuelle Daten zeigen leichte Entspannung."
+  },
+  {
+    "category": "branchen",
+    "title": "IT & Pflege weiter gesucht",
+    "description": "Fachkräftemangel bleibt hoch."
+  }
+]
