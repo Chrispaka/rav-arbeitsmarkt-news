@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Arbeitsmarkt News – RAV</title>
+<style>
+body { font-family: Arial; margin:0; background:#f5f5f5 }
+header { background:#A8D5BA; padding:20px; text-align:center; font-size:22px }
+.filters { text-align:center; margin:15px }
+.filters button { padding:8px 14px; margin:5px; border:none; border-radius:6px; cursor:pointer }
+.news { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:15px; padding:20px }
+.card { padding:15px; border-radius:10px }
+.allgemein { background:#A8D5BA }
+.regional { background:#FBC4AB }
+.national { background:#FFE9A8 }
+.branchen { background:#C3C9E4 }
+.hidden { display:none }
+</style>
+</head>
+<body>
+
+<header>Arbeitsmarkt News – RAV</header>
+
+<div class="filters">
+<button onclick="filter('all')">Alle</button>
+<button onclick="filter('allgemein')">Allgemein</button>
+<button onclick="filter('regional')">Regional Zürich</button>
+<button onclick="filter('national')">National</button>
+<button onclick="filter('branchen')">Branchen</button>
+</div>
+
+<div class="news" id="news"></div>
+
+<script>
+fetch("news.json")
+.then(r => r.json())
+.then(data => {
+  const n = document.getElementById("news");
+  data.forEach(i => {
+    const d = document.createElement("div");
+    d.className = `card ${i.category}`;
+    d.innerHTML = `<b>${i.title}</b><br>${i.description}`;
+    n.appendChild(d);
+  });
+});
+
+function filter(cat){
+  document.querySelectorAll(".card").forEach(c=>{
+    c.classList.toggle("hidden", cat!=="all" && !c.classList.contains(cat));
+  });
+}
+</script>
+
+</body>
+</html>
