@@ -1,27 +1,35 @@
-[
-  {
-    "category": "allgemein",
-    "title": "Arbeitsmarkt stabil",
-    "description": "Die Nachfrage nach Fachkräften bleibt konstant. Personalberater sollten Stellensuchenden nahelegen, frühzeitig auf Stellensuche zu gehen."
-  },
-  {
-    "category": "regional",
-    "title": "Zürich meldet neue Vakanzen",
-    "description": "Im Grossraum Zürich steigt die Zahl offener Stellen. Besonders Branchen wie ICT, Finance und Engineering boomen derzeit."
-  },
-  {
-    "category": "national",
-    "title": "Neue Arbeitslosenzahlen",
-    "description": "Registrierte Arbeitslosenquote Schweiz: 3,2 %, Kanton Zürich: ca. 2,9 %. Personalberater sollten Stellensuchende über die Unterschiede zwischen Arbeitslosigkeit und Stellensuchenden informieren."
-  },
-  {
-    "category": "branchen",
-    "title": "Bohrende Branchen",
-    "description": "IT, Gesundheitswesen und Nachhaltigkeit boomen. Bewerber sollten CVs auf digitale Skills, Projektleitung und Teamfähigkeit aktualisieren."
-  },
-  {
-    "category": "trends",
-    "title": "Vermittlung & Beratung – Tipps",
-    "description": "Für Personalberater: Frühzeitige Kontaktaufnahme, Networking, aktive Initiativbewerbungen und LinkedIn-Profile prüfen. Hinweis an Stellensuchende: Soft Skills betonen, Lebenslauf aktuell halten, relevante Weiterbildungen erwähnen."
-  }
-]
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8; /* Pastellton */
+    color: #333;
+}
+
+header {
+    background-color: #e0f7fa; /* Kantonsfarbe Zürich */
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #e0f7fa;
+}
