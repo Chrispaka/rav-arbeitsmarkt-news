@@ -1,117 +1,83 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<title>Arbeitsmarkt & Jobs Meilen – RAV</title>
-<style>
-body { font-family: Arial; background:#f5f5f5; margin:0; }
-header { background:#A8D5BA; padding:20px; text-align:center; font-size:24px; }
-.filters { text-align:center; margin:15px; }
-.filters button { padding:8px 14px; margin:5px; border:none; border-radius:6px; cursor:pointer; }
-.news, .jobs { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:15px; padding:20px; }
-.card { background:white; padding:15px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:0.2s; }
-.card:hover { transform:scale(1.02); }
-.stat-card { background:white; padding:15px; border-radius:10px; margin:0 10px; text-align:center; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbeitsmarktwissen Meilen</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Arbeitsmarktwissen Meilen</h1>
+        <nav>
+            <ul>
+                <li><a href="#news">News</a></li>
+                <li><a href="#jobs">Jobs</a></li>
+                <li><a href="#statistik">Statistik</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>Arbeitsmarkt News & Jobs – RAV Meilen</header>
+    <main>
+        <section id="news">
+            <h2>News</h2>
+            <div class="news-section">
+                <h3>Allgemeine News</h3>
+                <article>
+                    <h4>Neueste Entwicklungen im Arbeitsmarkt Zürich</h4>
+                    <p>[Hier kommen Inhalte im Stil von Watson.ch]</p>
+                </article>
+                <h3>National</h3>
+                <article>
+                    <h4>Arbeitsmarkt-Trends in der Schweiz</h4>
+                    <p>[Hier kommen Inhalte im Stil von Watson.ch]</p>
+                </article>
+                <h3>Berufs-Branchen</h3>
+                <article>
+                    <h4>Aktuelle Trends in verschiedenen Branchen</h4>
+                    <p>[Hier kommen Inhalte im Stil von Watson.ch]</p>
+                </article>
+            </div>
+        </section>
 
-<div class="filters">
-  <button onclick="filterNews('all')">Alle News</button>
-  <button onclick="filterNews('allgemein')">Allgemein</button>
-  <button onclick="filterNews('branchen')">Branchen</button>
-  <button onclick="filterNews('trends')">Tipps & Trends</button>
-</div>
+        <section id="jobs">
+            <h2>Jobs</h2>
+            <div class="job-filters">
+                <h3>Filter nach Branche</h3>
+                <select id="branche">
+                    <option value="alle">Alle Stellen</option>
+                    <option value="gesundheitswesen">Gesundheitswesen</option>
+                    <option value="ict">ICT</option>
+                    <option value="marketing">Marketing</option>
+                    <!-- Weitere Branchen hinzufügen -->
+                </select>
+            </div>
+            <div class="job-list">
+                <h3>Aktuelle Stellenangebote</h3>
+                <ul>
+                    <li><a href="https://example.com/job1">Job 1</a></li>
+                    <li><a href="https://example.com/job2">Job 2</a></li>
+                    <li><a href="https://example.com/job3">Job 3</a></li>
+                    <!-- Weitere Jobs hinzufügen -->
+                </ul>
+            </div>
+        </section>
 
-<div id="stats" class="stats"></div>
-<div id="news" class="news"></div>
+        <section id="statistik">
+            <h2>Statistik</h2>
+            <div class="statistik-section">
+                <p>Arbeitslosenquote Schweiz: [Wert]</p>
+                <p>Arbeitslosenquote Zürich: [Wert]</p>
+                <p>Stellensuchendenquote Schweiz: [Wert]</p>
+                <p>Stellensuchendenquote Zürich: [Wert]</p>
+            </div>
+        </section>
+    </main>
 
-<h2 style="text-align:center; margin-top:20px;">Aktuelle Jobs Meilen & Umgebung</h2>
-<div class="filters">
-  <button onclick="filterJobs('all')">Alle</button>
-  <button onclick="filterJobs('pflege')">Pflege</button>
-  <button onclick="filterJobs('sachbearbeitung')">Sachbearbeitung</button>
-  <button onclick="filterJobs('ict')">ICT</button>
-</div>
-<div id="jobs" class="jobs"></div>
+    <footer>
+        <p>© 2026 Arbeitsmarktwissen Meilen. Alle Rechte vorbehalten.</p>
+    </footer>
 
-<script>
-// News laden
-function loadNews(){
-  fetch('news.json')
-    .then(r=>r.json())
-    .then(data=>{
-      const n=document.getElementById("news");
-      n.innerHTML='';
-      data.forEach(i=>{
-        const d=document.createElement("div");
-        d.className='card '+i.category;
-        d.innerHTML=`<b>${i.title}</b><br>${i.description}`;
-        n.appendChild(d);
-      });
-    });
-}
-
-function filterNews(cat){
-  document.querySelectorAll("#news .card").forEach(c=>{
-    c.style.display = (cat==='all' || c.classList.contains(cat)) ? '' : 'none';
-  });
-}
-
-// Jobs laden
-function loadJobs(){
-  fetch('jobs.json')
-    .then(r=>r.json())
-    .then(data=>{
-      data.sort((a,b)=>new Date(b.posted)-new Date(a.posted));
-      const j=document.getElementById("jobs");
-      j.innerHTML='';
-      data.forEach(i=>{
-        const d=document.createElement("div");
-        d.className='card '+i.category;
-        d.innerHTML=`
-          <b>${i.title}</b><br>
-          <small>${i.location} | Aufgeschaltet: ${i.posted}</small><br>
-          ${i.description}
-        `;
-        if(i.link){
-          const a=document.createElement("a");
-          a.href=i.link;
-          a.target="_blank";
-          a.textContent="Zum Inserat";
-          a.style="display:block;margin-top:8px;color:#0056b3;font-weight:bold;";
-          d.appendChild(a);
-        }
-        j.appendChild(d);
-      });
-    });
-}
-
-function filterJobs(cat){
-  document.querySelectorAll("#jobs .card").forEach(c=>{
-    c.style.display = (cat==='all' || c.classList.contains(cat)) ? '' : 'none';
-  });
-}
-
-// Arbeitslosenzahlen (aktuell manuell)
-function loadStats(){
-  const stats=document.getElementById("stats");
-  stats.innerHTML='';
-  const s1=document.createElement("div");
-  s1.className='stat-card';
-  s1.innerHTML="<b>Schweiz</b><br>Arbeitslosenquote: 3,2 % (SECO aktuell)";
-  const s2=document.createElement("div");
-  s2.className='stat-card';
-  s2.innerHTML="<b>Kanton Zürich</b><br>Arbeitslosenquote: ca. 2,9 %";
-  stats.append(s1,s2);
-}
-
-loadStats();
-loadNews();
-loadJobs();
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
